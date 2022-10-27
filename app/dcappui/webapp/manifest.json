@@ -93,8 +93,7 @@
             "css": []
         },
         "routing": {
-            "routes": [
-                {
+            "routes": [{
                     "pattern": ":?query:",
                     "name": "HeadersList",
                     "target": "HeadersList"
@@ -113,6 +112,7 @@
                     "options": {
                         "settings": {
                             "entitySet": "Headers",
+                            "initialLoad": "Enabled",
                             "variantManagement": "Page",
                             "navigation": {
                                 "Headers": {
