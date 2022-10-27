@@ -16,12 +16,28 @@ annotate service.Headers with @(UI.LineItem : [
     },
 ]);
 
-annotate service.Headers with @(UI.Facets : [{
-    $Type  : 'UI.ReferenceFacet',
-    Label  : 'Items',
-    ID     : 'items',
-    Target : 'items/@UI.PresentationVariant#items',
-}, ]);
+annotate service.Headers with @(UI.Facets : [
+    {
+        $Type : 'UI.ReferenceFacet',
+        Label : 'Header Info',
+        ID : 'HeaderInfo',
+        Target : '@UI.FieldGroup#HeaderInfo1',
+    },
+    {
+        $Type         : 'UI.ReferenceFacet',
+        Label         : 'Items',
+        ID            : 'items',
+        Target        : 'items/@UI.PresentationVariant#items',
+        ![@UI.Hidden] : hiddenFlag,
+    },
+    {
+        $Type         : 'UI.ReferenceFacet',
+        Label         : 'Items',
+        ID            : 'items2',
+        Target        : 'items/@UI.PresentationVariant#itemsStatus2',
+        ![@UI.Hidden] : negatedHiddenFlag,
+    },
+]);
 
 annotate service.Items with @(UI.LineItem #items : [
     {
@@ -30,12 +46,43 @@ annotate service.Items with @(UI.LineItem #items : [
         Label : 'location',
     },
     {
+        $Type : 'UI.DataField',
+        Value : fieldControl,
+        Label : 'fieldControl',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : material,
+        Label : 'material',
+    },
+    {
         $Type      : 'UI.DataField',
-        Value      : material,
-        Label      : 'material',
-        @UI.Hidden : fieldControl,
+        Value      : fieldControl,
+        Label      : 'Field Control hidable',
+        @UI.Hidden : headers.hiddenFlag //only hides field value not column
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : quantity,
+        Label : 'quantity',
+    },
+], );
 
-
+annotate service.Items with @(UI.LineItem #itemsStatus2 : [
+    {
+        $Type : 'UI.DataField',
+        Value : location,
+        Label : 'location',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : fieldControl,
+        Label : 'fieldControl',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : material,
+        Label : 'material',
     },
     {
         $Type : 'UI.DataField',
