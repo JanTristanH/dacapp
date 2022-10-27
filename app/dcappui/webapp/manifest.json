@@ -152,6 +152,21 @@
                                         }
                                     }
                                 }
+                            },
+                            "content": {
+                                "body": {
+                                    "sections": {
+                                        "DummySection": {
+                                            "template": "dcappui.ext.fragment.DummySection",
+                                            "position": {
+                                                "placement": "After",
+                                                "anchor": "items"
+                                            },
+                                            "title": "Dummy Section",
+                                            "type": "XMLFragment"
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
