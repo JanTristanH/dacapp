@@ -1,10 +1,17 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core"
 	xmlns="sap.m"
-	xmlns:macros="sap.fe.macros">
+	xmlns:macros="sap.fe.macros"
+	xmlns:smartTable="sap.ui.comp.smarttable">
 	<VBox>
 		<Button core:require="{ handler: 'dcappui/ext/fragment/DummySection'}" text="DummySection" press="handler.onPress" />
 		<MessageStrip text="All logs for header {ID}" showIcon="true">
 		</MessageStrip>
 		<macros:Table metaPath="items/@com.sap.vocabularies.UI.v1.LineItem#items" id="logTab" />
+
+		<!-- <smartTable:SmartTable id="LineItemsSmartTableSample" entitySet="items" tableBindingPath="/Headers(ID=2feec9ec-c192-48c6-8971-e3c4838cb861,IsActiveEntity=true)" tableType="Table" persistencyKey="ID" useExportToExcel="true" header="Line Items" showRowCount="true" enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true">
+			<smartTable:layoutData>
+				<FlexItemData growFactor="1" baseSize="0%"/>
+			</smartTable:layoutData>
+		</smartTable:SmartTable> -->
 	</VBox>
 </core:FragmentDefinition>
