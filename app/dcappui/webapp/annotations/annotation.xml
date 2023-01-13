@@ -13,6 +13,39 @@
     </edmx:Reference>
     <edmx:DataServices>
         <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+            <Annotations Qualifier="as" Target="CatalogService.Headers">
+                <Annotation Term="UI.LineItem">
+
+                    <!-- <Collection>
+                        <Record Type="UI.DataField">
+
+                            <PropertyValue Property="Value" Path="status" />
+                            <Annotation Term="Common.FieldControl">
+                                <EnumMember>Common.FieldControlType/Hidden</EnumMember>
+                            </Annotation>
+
+                        </Record>
+                    </Collection> -->
+
+
+                    <!-- Straight up hide it
+                        <! Hides a column :) Done with chat gpt -->
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ID"/>
+                            <!-- <Annotation Term="UI.Hidden"  Bool = "true"/> -->
+                            <Annotation Term="UI.Hidden" Bool="true">
+                                <!-- <EnumMember>Common.FieldControlType</EnumMember> -->
+                            </Annotation>
+
+                        </Record>
+                    </Collection>
+
+
+                </Annotation>
+
+            </Annotations>
+
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>
