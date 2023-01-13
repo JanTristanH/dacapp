@@ -12,18 +12,11 @@ service CatalogService {
                 when
                     1
                 then
-                    true
+                    'UI.ImportanceType/High'
                 else
-                    false
-            end as hiddenFlag : Boolean,
-            case Headers.status
-                when
-                    1
-                then
-                    false
-                else
-                    true
-            end as negatedHiddenFlag : Boolean,
+                    'UI.ImportanceType/Low'
+            end as ImportanceQuantity : String,
+
         };
 
     entity Items   as projection on my.Items;

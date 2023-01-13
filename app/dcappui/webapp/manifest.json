@@ -93,8 +93,7 @@
             "css": []
         },
         "routing": {
-            "routes": [
-                {
+            "routes": [{
                     "pattern": ":?query:",
                     "name": "HeadersList",
                     "target": "HeadersList"
@@ -156,17 +155,7 @@
                             },
                             "content": {
                                 "body": {
-                                    "sections": {
-                                        "DummySection": {
-                                            "template": "dcappui.ext.fragment.DummySection",
-                                            "position": {
-                                                "placement": "Before",
-                                                "anchor": "items"
-                                            },
-                                            "title": "Dummy Section",
-                                            "type": "XMLFragment"
-                                        }
-                                    }
+                                    "sections": {}
                                 }
                             }
                         }
