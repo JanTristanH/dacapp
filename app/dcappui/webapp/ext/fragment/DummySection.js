@@ -8,6 +8,11 @@ sap.ui.define([
             console.log("I was here");
             debugger
         },
+        onBeforeRebindTableExtension : function (oEvent){
+            //https://blogs.sap.com/2020/08/15/sap-fiori-elements-initial-filter-values/
+            //TODO move to correct extension
+            debugger
+        },
         onPress: function () {
             let macroTable = this.byId("logTab")
             macroTable.setVisible(true);
