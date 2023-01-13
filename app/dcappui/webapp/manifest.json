@@ -134,11 +134,7 @@
                             "entitySet": "Headers",
                             "controlConfiguration": {
                                 "items/@com.sap.vocabularies.UI.v1.LineItem#items": {
-                                    "columns": {
-                                        "DataField::material": {
-                                            "availability": "Hidden"
-                                        }
-                                    },
+                                    "columns": {},
                                     "tableSettings": {
                                         "selectionLimit": 0,
                                         "quickVariantSelection": {

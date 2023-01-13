@@ -39,6 +39,11 @@ annotate service.Headers with @(UI.Facets : [
 annotate service.Items with @(UI.LineItem #items : [
     {
         $Type : 'UI.DataField',
+        Value : ID,
+        Label : 'Item ID',
+    },
+    {
+        $Type : 'UI.DataField',
         Value : location,
         Label : 'location',
     },
@@ -55,12 +60,17 @@ annotate service.Items with @(UI.LineItem #items : [
     {
         $Type : 'UI.DataField',
         Value : fieldControl,
-        Label : 'Field Control hidable'
+        Label : 'Field Control hidable',
     },
     {
         $Type : 'UI.DataField',
         Value : quantity,
         Label : 'quantity',
+        // This line works
+        ![@UI.Importance] : 'UI.ImportanceType/High'
+        // does not work, as its translated to a path expression
+        //![@UI.Importance] : headers.ImportanceQuantity
+        //![@UI.Importance] : {$edmJson: [{$EnumMember: $fieldControl}]},
     },
 ], );
 

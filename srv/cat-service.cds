@@ -8,14 +8,7 @@ service CatalogService {
             Headers.date,
             Headers.items,
             Headers.status,
-            case Headers.status
-                when
-                    1
-                then
-                    'UI.ImportanceType/High'
-                else
-                    'UI.ImportanceType/Low'
-            end as ImportanceQuantity : String,
+            'UI.ImportanceType/High' as ImportanceQuantity : cds.String,
 
         };
 
