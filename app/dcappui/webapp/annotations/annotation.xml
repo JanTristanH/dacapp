@@ -12,6 +12,7 @@
         <edmx:Include Namespace="CatalogService"/>
     </edmx:Reference>
     <edmx:DataServices>
+
         <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
             <Annotations Qualifier="as" Target="CatalogService.Headers">
                 <Annotation Term="UI.LineItem">
